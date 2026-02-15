@@ -73,22 +73,6 @@
                         <field name="match_response"/>
                     </group>
 
-                    <group string="L9 Controls">
-                        <field name="normalized"/>
-                        <button
-                            name="action_mark_normalized"
-                            type="object"
-                            string="Mark Normalized"
-                            class="btn-primary"
-                        />
-                        <button
-                            name="action_run_buyer_match"
-                            type="object"
-                            string="Run Buyer Match"
-                            class="btn-success"
-                        />
-                    </group>
-
                 </sheet>
             </form>
         </field>

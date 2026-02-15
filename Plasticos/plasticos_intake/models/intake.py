@@ -1,5 +1,5 @@
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError, UserError
+from odoo.exceptions import ValidationError
 
 
 class PlasticosIntake(models.Model):
@@ -16,8 +16,7 @@ class PlasticosIntake(models.Model):
     partner_id = fields.Many2one(
         "res.partner",
         required=True,
-        tracking=True,
-        index=True,
+        tracking=True
     )
     facility_id = fields.Many2one(
         "res.partner",
@@ -39,8 +38,8 @@ class PlasticosIntake(models.Model):
     # Material Snapshot (Schema-Aligned)
     # =========================
 
-    polymer = fields.Char(required=True, index=True)
-    form = fields.Char(required=True, index=True)
+    polymer = fields.Char(required=True)
+    form = fields.Char(required=True)
     color = fields.Char()
     source_type = fields.Char()
     grade_hint = fields.Char()
@@ -117,31 +116,12 @@ class PlasticosIntake(models.Model):
 
     match_status = fields.Selection([
         ("pending", "Pending"),
-        ("normalized", "Normalized"),
         ("matched", "Matched"),
         ("rejected", "Rejected"),
-        ("error", "Error"),
+        ("error", "Error")
     ], default="pending", tracking=True)
 
     match_response = fields.Json()
-
-    normalized = fields.Boolean(
-        default=False,
-        help="Must be True before adapter emits packet",
-    )
-
-    last_packet_id = fields.Char(index=True)
-    last_packet_version = fields.Char()
-    last_packet_payload = fields.Json()
-    last_packet_ts = fields.Datetime()
-
-    _sql_constraints = [
-        (
-            "unique_packet_per_version",
-            "unique(last_packet_id, last_packet_version)",
-            "Duplicate packet emission detected.",
-        )
-    ]
 
     # =========================
     # Validation
@@ -158,24 +138,3 @@ class PlasticosIntake(models.Model):
         for rec in self:
             if rec.loads_per_month and rec.loads_per_month < 0:
                 raise ValidationError("Loads per month cannot be negative.")
-
-    def action_mark_normalized(self):
-        for rec in self:
-            rec.write({
-                "normalized": True,
-                "match_status": "normalized",
-            })
-
-    def action_run_buyer_match(self):
-        adapter = self.env["l9.adapter.service"]
-        for rec in self:
-            if not rec.normalized:
-                raise UserError("Intake must be normalized before match.")
-            adapter.run_buyer_match(rec)
-
-    def action_replay_last_packet(self):
-        adapter = self.env["l9.adapter.service"]
-        for rec in self:
-            if not rec.last_packet_payload:
-                raise UserError("No stored packet to replay.")
-            adapter.emit_raw_packet(rec.last_packet_payload)

@@ -71,6 +71,7 @@ class PlasticosTransaction(models.Model):
     ], default="draft", tracking=True)
 
     def init(self):
+        super().init()
         self._cr.execute("""
             CREATE UNIQUE INDEX IF NOT EXISTS
             plasticos_vendor_bill_unique
@@ -108,6 +109,11 @@ class PlasticosTransaction(models.Model):
             ON plasticos_transaction (gross_margin);
         """)
 
+        self._cr.execute("""
+            CREATE INDEX IF NOT EXISTS plasticos_tx_commission_rule_idx
+            ON plasticos_transaction (commission_rule_id);
+        """)
+
     @api.model
     def create(self, vals):
         if vals.get("name", "New") == "New":
@@ -118,8 +124,8 @@ class PlasticosTransaction(models.Model):
 
     def write(self, vals):
         for rec in self:
-            # Block direct state mutation
-            if "state" in vals:
+            # Block direct state mutation (allow internal transitions)
+            if "state" in vals and not self.env.context.get("allow_state_change"):
                 raise UserError("State can only be changed via action methods.")
 
             # Immutable identity
@@ -148,21 +154,31 @@ class PlasticosTransaction(models.Model):
             if rec.customer_invoice_id and "customer_invoice_id" in vals:
                 raise UserError("Customer invoice cannot be reassigned once set.")
 
-            # Vendor bill duplicate guard
+            # Vendor bill duplicate guard (proper M2M command parsing)
             if "vendor_bill_ids" in vals:
-                for bill in self.env["account.move"].browse(vals.get("vendor_bill_ids", [])):
+                commands = vals["vendor_bill_ids"]
+                bill_ids = []
+                for cmd in commands:
+                    if cmd[0] in (4, 6):
+                        bill_ids += cmd[1] if cmd[0] == 6 else [cmd[1]]
+                for bill_id in bill_ids:
                     existing = self.search([
-                        ("vendor_bill_ids", "in", bill.id),
+                        ("vendor_bill_ids", "in", bill_id),
                         ("id", "!=", rec.id),
                     ])
                     if existing:
                         raise UserError("Vendor bill already linked to another transaction.")
 
-            # Freight bill duplicate guard
+            # Freight bill duplicate guard (proper M2M command parsing)
             if "freight_bill_ids" in vals:
-                for bill in self.env["account.move"].browse(vals.get("freight_bill_ids", [])):
+                commands = vals["freight_bill_ids"]
+                bill_ids = []
+                for cmd in commands:
+                    if cmd[0] in (4, 6):
+                        bill_ids += cmd[1] if cmd[0] == 6 else [cmd[1]]
+                for bill_id in bill_ids:
                     existing = self.search([
-                        ("freight_bill_ids", "in", bill.id),
+                        ("freight_bill_ids", "in", bill_id),
                         ("id", "!=", rec.id),
                     ])
                     if existing:
@@ -172,14 +188,16 @@ class PlasticosTransaction(models.Model):
 
     def unlink(self):
         for rec in self:
+            if rec.customer_invoice_id or rec.vendor_bill_ids:
+                raise UserError("Cannot delete transaction linked to accounting records.")
             if rec.state == "closed":
                 raise UserError("Closed transactions cannot be deleted.")
         return super().unlink()
 
     @api.depends(
-        "customer_invoice_id.amount_total",
-        "vendor_bill_ids.amount_total",
-        "freight_bill_ids.amount_total",
+        "customer_invoice_id.amount_total_signed",
+        "vendor_bill_ids.amount_total_signed",
+        "freight_bill_ids.amount_total_signed",
         "commission_rule_id.percentage",
         "commission_override_flat",
         "commission_frozen",
@@ -187,10 +205,10 @@ class PlasticosTransaction(models.Model):
     )
     def _compute_financials(self):
         for rec in self:
-            revenue = rec.customer_invoice_id.amount_total if rec.customer_invoice_id else 0.0
+            revenue = rec.customer_invoice_id.amount_total_signed if rec.customer_invoice_id else 0.0
 
-            vendor_cost = sum(rec.vendor_bill_ids.mapped("amount_total"))
-            freight_cost = sum(rec.freight_bill_ids.mapped("amount_total"))
+            vendor_cost = sum(rec.vendor_bill_ids.mapped("amount_total_signed"))
+            freight_cost = sum(rec.freight_bill_ids.mapped("amount_total_signed"))
 
             cost = vendor_cost + freight_cost
             gross = revenue - cost
@@ -214,10 +232,16 @@ class PlasticosTransaction(models.Model):
             rec.net_margin = net
 
     def action_activate(self):
-        self.state = "active"
+        self.with_context(allow_state_change=True).write({"state": "active"})
 
     def action_close(self):
         for rec in self:
+            # Row-level lock to prevent concurrent close race
+            self.env.cr.execute(
+                "SELECT id FROM plasticos_transaction WHERE id = %s FOR UPDATE",
+                (rec.id,)
+            )
+
             if not rec.customer_invoice_id or rec.customer_invoice_id.state != "posted":
                 raise UserError("Customer invoice must be posted.")
 
@@ -227,10 +251,14 @@ class PlasticosTransaction(models.Model):
             if rec.linda_load_id and rec.linda_load_id.state != "closed":
                 raise UserError("Logistics must be closed.")
 
-            # Compliance Gate
-            compliance_service = self.env["plasticos.document"].sudo()
-            if hasattr(compliance_service, "check_transaction_compliance"):
-                compliance_service.check_transaction_compliance(rec)
+            # Security enforcement
+            if not self.env.user.has_group("plasticos_transaction.group_plasticos_manager"):
+                raise UserError("Only Plasticos Managers can close transactions.")
+
+            # Hard compliance contract
+            compliance_service = self.env["plasticos.compliance.service"]
+            if not compliance_service.check_transaction_compliance(rec):
+                raise UserError("Compliance validation failed.")
 
             # Prevent negative margin close
             if rec.gross_margin < 0:
@@ -241,4 +269,4 @@ class PlasticosTransaction(models.Model):
             rec.commission_frozen_amount = rec.commission_amount
             rec.commission_frozen_at = fields.Datetime.now()
 
-            rec.state = "closed"
+            rec.with_context(allow_state_change=True).write({"state": "closed"})

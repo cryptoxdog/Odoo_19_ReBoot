@@ -1,0 +1,14 @@
+<odoo>
+    <record id="view_commission_rule_tree" model="ir.ui.view">
+        <field name="name">commission.rule.tree</field>
+        <field name="model">plasticos.commission.rule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sales_rep_id"/>
+                <field name="percentage"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

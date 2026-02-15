@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_document_rule_tree" model="ir.ui.view">
+        <field name="name">plasticos.document.rule.tree</field>
+        <field name="model">plasticos.document.rule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="tag_id"/>
+                <field name="res_model"/>
+                <field name="required_for_invoice"/>
+                <field name="required_for_close"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

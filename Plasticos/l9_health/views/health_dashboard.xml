@@ -1,0 +1,13 @@
+<odoo>
+    <record id="view_l9_health_dashboard" model="ir.ui.view">
+        <field name="name">l9.health.dashboard</field>
+        <field name="model">l9.health.metrics</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="total_runs"/>
+                <field name="error_runs"/>
+                <field name="avg_latency"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

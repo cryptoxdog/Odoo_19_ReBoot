@@ -1,0 +1,9 @@
+<odoo>
+    <record id="cron_l9_regression_detector" model="ir.cron">
+        <field name="name">L9 Match Regression Detector</field>
+        <field name="model_id" ref="model_l9_regression_detector"/>
+        <field name="state">code</field>
+        <field name="code">model.run_regression_check()</field>
+        <field name="interval_number">30</field>
+        <field name="interval_type">minutes</field>
+    </record>

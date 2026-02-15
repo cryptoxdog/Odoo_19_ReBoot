@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_document_tree" model="ir.ui.view">
+        <field name="name">plasticos.document.tree</field>
+        <field name="model">plasticos.document</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="res_model"/>
+                <field name="res_id"/>
+                <field name="tag_id"/>
+                <field name="verified"/>
+                <field name="override"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

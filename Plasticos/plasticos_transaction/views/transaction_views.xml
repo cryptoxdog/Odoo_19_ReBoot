@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_transaction_tree" model="ir.ui.view">
+        <field name="name">plasticos.transaction.tree</field>
+        <field name="model">plasticos.transaction</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="revenue_total"/>
+                <field name="cost_total"/>
+                <field name="gross_margin"/>
+                <field name="commission_amount"/>
+                <field name="net_margin"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>

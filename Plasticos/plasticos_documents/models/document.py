@@ -26,6 +26,15 @@ class PlasticosDocument(models.Model):
     @api.model
     def create(self, vals):
         record = super().create(vals)
+
+        if record.res_model == "linda.load":
+            load = self.env["linda.load"].browse(record.res_id)
+            if load.transaction_id:
+                self.env["plasticos.compliance.service"].get_missing_documents(
+                    "plasticos.transaction",
+                    load.transaction_id.id
+                )
+
         return record
 
     def action_verify(self):

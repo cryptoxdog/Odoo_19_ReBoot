@@ -33,21 +33,24 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install -U pip wheel
-          # Adjust these to your repo's Odoo install method
           pip install -r requirements.txt || true
 
-      - name: Run Odoo tests
+      - name: Run Odoo tests (Docker)
         env:
           PGHOST: 127.0.0.1
           PGPORT: 5432
           PGUSER: odoo
           PGPASSWORD: odoo
         run: |
-          # Replace with your repo’s real Odoo test command.
-          # Typical shape:
-          # odoo-bin -d odoo --stop-after-init -i l9_trace,plasticos_material,plasticos_processing,plasticos_intake,l9_adapter --test-enable --log-level=test
-          echo "TODO: wire to your repo's odoo-bin invocation"
-          exit 1
-(Next pass I’ll patch this to the exact odoo-bin command once we align to your repo entrypoint path.)
-
-C) Canonical replay runner (CLI, deterministic)
+          docker run --rm --network host \
+            -e HOST=127.0.0.1 \
+            -e PORT=5432 \
+            -e USER=odoo \
+            -e PASSWORD=odoo \
+            -v "${{ github.workspace }}/Plasticos:/mnt/extra-addons" \
+            odoo:19 \
+            -- -d odoo \
+              --stop-after-init \
+              -i plasticos_transaction \
+              --test-enable \
+              --log-level=test

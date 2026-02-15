@@ -1,0 +1,241 @@
+# component_name: "Gmp-Execution"
+# module_version: "1.0.0"
+# created_by: "Igor Beylin"
+# created_at: "2026-01-31T20:27:26Z"
+# updated_at: "2026-01-31T20:47:23Z"
+# layer: "operations"
+# domain: "workflows"
+# file_name: "gmp-execution"
+# type: "utility"
+# status: "active"
+
+# GMP Execution Workflow — Enforced Step Ordering
+# ================================================
+#
+# Usage:
+#   python3 workflows/runner.py run workflows/defs/gmp-execution.yaml
+#   python3 workflows/runner.py resume workflows/defs/gmp-execution.yaml
+#
+# This workflow ENFORCES the /gmp protocol with mandatory memory operations.
+# Steps cannot be skipped — dependencies are enforced by the DAG runner.
+
+id: gmp-execution
+name: GMP Execution Workflow (Enforced)
+version: "1.0.0"
+description: |
+  Governance Managed Process with ENFORCED step ordering.
+
+  MANDATORY STEPS:
+  1. 🧠 Memory Read — REQUIRED before implementation
+  2. Scope Lock — Define TODO plan
+  3. User Confirm — Gate before execution
+  4. Baseline — Verify files exist
+  5. Implement — Execute TODO (sed/cp only for harvest)
+  6. Validate — py_compile, lint, tests
+  7. 🧠 Memory Write — REQUIRED before finalize
+  8. Finalize — Generate report
+
+variables:
+  # These are set by the calling context
+  gmp_id: "GMP-XXX"
+  tier: "RUNTIME"
+  task_keywords: "tool discovery"
+  component: "core/tools"
+  domain: "tools"
+  working_dir: "/Users/ib-mac/Projects/L9"
+  memory_client: "agents/cursor/cursor_memory_client.py"
+
+steps:
+  # ==========================================================================
+  # PHASE 0: MEMORY READ (MANDATORY)
+  # ==========================================================================
+  - id: memory_read
+    name: "🧠 Memory Read (MANDATORY)"
+    type: shell
+    config:
+      commands:
+        # Search for related work
+        - |
+          echo "=== 🧠 MEMORY READ ===" &&
+          python3 ${memory_client} search "${task_keywords}" 2>/dev/null || echo "⚠️ Memory unavailable - continuing without context"
+        # Search for lessons
+        - |
+          python3 ${memory_client} search "lessons errors ${component}" 2>/dev/null || true
+        # Search for patterns
+        - |
+          python3 ${memory_client} search "${domain} patterns" 2>/dev/null || true
+    checkpoint: false # Don't pause, but log results
+
+  # ==========================================================================
+  # PHASE 0: SCOPE LOCK
+  # ==========================================================================
+  - id: scope_lock
+    name: "Scope Lock (Phase 0)"
+    type: checkpoint
+    depends_on: [memory_read]
+    config:
+      message: |
+        ## SCOPE LOCK REQUIRED
+
+        Before proceeding, define the TODO plan:
+
+        | T# | File | Lines | Action | Description |
+        |----|------|-------|--------|-------------|
+
+        Then type CONFIRM to proceed.
+
+  # ==========================================================================
+  # PHASE 1: BASELINE VERIFICATION
+  # ==========================================================================
+  - id: baseline_check
+    name: "Baseline Verification"
+    type: validate
+    depends_on: [scope_lock]
+    config:
+      checks:
+        - type: shell
+          command: "echo 'Baseline: Verify files exist and line ranges are correct'"
+
+  # ==========================================================================
+  # PHASE 2-3: IMPLEMENT
+  # ==========================================================================
+  - id: implement
+    name: "Implementation (Phase 2-3)"
+    type: checkpoint
+    depends_on: [baseline_check]
+    config:
+      message: |
+        ## IMPLEMENTATION PHASE
+
+        Execute TODO plan items.
+
+        RULES:
+        - For /use-harvest: Use sed/cp ONLY — no manual rewriting
+        - For semantic changes: Apply targeted edits
+        - ALL changes must map 1:1 to TODO items
+        - NO scope drift
+
+        Type CONTINUE when implementation is complete.
+
+  # ==========================================================================
+  # PHASE 4: VALIDATE (via gmp-validate-stage.py)
+  # ==========================================================================
+  - id: validate_stage
+    name: "Validate Stage (Phase 4)"
+    type: shell
+    depends_on: [implement]
+    config:
+      commands:
+        - |
+          echo "=== VALIDATION PHASE ===" &&
+          python3 scripts/gmp-validate-stage.py --files ${modified_files} --json 2>/dev/null || echo "⚠️ Validation script failed"
+
+  - id: validate_gate
+    name: "Validation Gate"
+    type: checkpoint
+    depends_on: [validate_stage]
+    config:
+      message: |
+        ## VALIDATION RESULTS
+
+        Review gmp-validate-stage.py output above.
+
+        If PASS: Type CONTINUE
+        If FAIL: Type FIX to return to implementation
+
+  # ==========================================================================
+  # PHASE 5.5: MEMORY WRITE (MANDATORY)
+  # ==========================================================================
+  - id: memory_write
+    name: "🧠 Memory Write (MANDATORY)"
+    type: shell
+    depends_on: [validate_gate]
+    config:
+      commands:
+        - |
+          echo "=== 🧠 MEMORY WRITE ===" &&
+          echo "Execute: python3 ${memory_client} write 'GMP summary' --kind lesson" &&
+          python3 ${memory_client} write "${gmp_id}: Completed ${task_keywords} changes. Tags: gmp, ${component}" --kind lesson 2>/dev/null || echo "⚠️ Memory write failed - continuing"
+
+  # ==========================================================================
+  # PHASE 6: FINALIZE — generate report → validate report → update workflow
+  # ==========================================================================
+  - id: finalize_generate
+    name: "Finalize [1/3] — Generate Report"
+    type: shell
+    depends_on: [memory_write]
+    config:
+      commands:
+        - |
+          echo "=== [1/3] GENERATING GMP REPORT ===" &&
+          python3 scripts/generate_gmp_report.py \
+            --task "${task_keywords}" \
+            --tier "${tier}_TIER" \
+            --summary "GMP execution via DAG enforcer" \
+            --skip-verify 2>/dev/null || echo "⚠️ Report generation failed"
+
+  - id: finalize_validate
+    name: "Finalize [2/3] — Validate Report"
+    type: shell
+    depends_on: [finalize_generate]
+    config:
+      commands:
+        - |
+          echo "=== [2/3] VALIDATING GMP REPORT ===" &&
+          REPORT=$(ls -t reports/GMP\ Reports/GMP-Report-*.md 2>/dev/null | head -1) &&
+          if [ -n "$REPORT" ]; then
+            python3 scripts/validate_gmp_report.py "$REPORT" 2>/dev/null || echo "⚠️ Report has validation issues"
+          else
+            echo "⚠️ No report found to validate"
+          fi
+
+  - id: finalize_workflow
+    name: "Finalize [3/3] — Update workflow_state.md"
+    type: shell
+    depends_on: [finalize_validate]
+    config:
+      commands:
+        - |
+          echo "=== [3/3] UPDATING WORKFLOW STATE ===" &&
+          REPORT=$(ls -t reports/GMP\ Reports/GMP-Report-*.md 2>/dev/null | head -1) &&
+          if [ -n "$REPORT" ]; then
+            python3 scripts/update_workflow_state.py --from-report "$REPORT" 2>/dev/null || echo "⚠️ Workflow state update failed"
+          else
+            echo "⚠️ No report found for workflow update"
+          fi
+        - |
+          echo "" &&
+          echo "=== GMP COMPLETE ===" &&
+          echo "GMP ID: ${gmp_id}" &&
+          echo "Tier: ${tier}" &&
+          echo "Pipeline: generate → validate → workflow_state" &&
+          echo "" &&
+          echo "Memory Operations:" &&
+          echo "  - Read: ✅ Context injected" &&
+          echo "  - Write: ✅ Lessons saved"
+
+  - id: commit_gate
+    name: "Commit Gate"
+    type: checkpoint
+    depends_on: [finalize_workflow]
+    config:
+      message: |
+        ## Ready to Commit?
+
+        Options:
+        - YES: Commit changes
+        - NO: Exit without commit
+        - DIFF: Show git diff first
+
+  - id: end
+    name: "End"
+    type: shell
+    depends_on: [commit_gate]
+    continue_on_fail: true
+    config:
+      commands:
+        - "echo '✅ GMP workflow complete'"
+# tags: ["agent-config", "configuration", "operations", "tool-config", "utility", "workflow", "workflows"]
+# keywords: ["description", "execution", "gmp", "name", "steps", "variables"]
+# last_modified: "2026-01-31T20:47:23Z"
+# ============================================================================

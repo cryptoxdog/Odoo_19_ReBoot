@@ -1,0 +1,14 @@
+# Environment and secrets
+.env
+.env.*
+!.env.template
+
+# OS and IDE
+.DS_Store
+*.pyc
+__pycache__/
+*.pyo
+
+# Local / generated
+.venv/
+venv/

@@ -1,0 +1,196 @@
+version: '1.0'
+last_verified: 2026-02-15T23:15:56.191420+00:00Z
+global_protected_files: []
+subsystems:
+  config:
+    path: config
+    purpose: Repo config
+    entry_point:
+      file: config/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id001 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id001
+    invariants: []
+  docs:
+    path: Plasticos/docs
+    purpose: Audit procedures, compliance gates, lifecycle and admin playbooks.
+    entry_point:
+      file: Plasticos/docs/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id002 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id002
+    invariants: []
+  scripts:
+    path: Plasticos/scripts
+    purpose: Pre-commit hooks and intake replay matrix.
+    entry_point:
+      file: Plasticos/scripts/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id003 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id003
+    invariants: []
+  l9_integration:
+    path: Plasticos/l9_integration
+    purpose: Adapter and services for L9 trace and external integrations.
+    entry_point:
+      file: Plasticos/l9_integration/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id004 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id004
+    invariants: []
+  plasticos_commission:
+    path: Plasticos/plasticos_commission
+    purpose: Commission engine and views; dependency for transaction spine.
+    entry_point:
+      file: Plasticos/plasticos_commission/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id005 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id005
+    invariants: []
+  plasticos_documents:
+    path: Plasticos/plasticos_documents
+    purpose: Document handling used by plasticos_transaction and others.
+    entry_point:
+      file: Plasticos/plasticos_documents/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id006 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id006
+    invariants: []
+  plasticos_intake:
+    path: Plasticos/plasticos_intake
+    purpose: Intake engine; depends on plasticos_material and plasticos_processing.
+    entry_point:
+      file: Plasticos/plasticos_intake/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id007 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id007
+    invariants: []
+  plasticos_logistics:
+    path: Plasticos/plasticos_logistics
+    purpose: Dispatch models, cron, views and services.
+    entry_point:
+      file: Plasticos/plasticos_logistics/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id008 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id008
+    invariants: []
+  plasticos_transaction:
+    path: Plasticos/plasticos_transaction
+    purpose: Core transaction spine; depends on documents, commission, logistics.
+    entry_point:
+      file: Plasticos/plasticos_transaction/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id009 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id009
+    invariants: []
+  tests:
+    path: Plasticos/tests
+    purpose: Module installation, upgrade safety, replay and buyer-matching tests.
+    entry_point:
+      file: Plasticos/tests/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id010 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id010
+    invariants: []
+  data:
+    path: Plasticos/data
+    purpose: Centralized data and scheduled job definitions used across modules.
+    entry_point:
+      file: Plasticos/data/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id011 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id011
+    invariants: []
+  infra:
+    path: Plasticos/infra
+    purpose: Docker Compose and config for Jaeger, Prometheus, Grafana.
+    entry_point:
+      file: Plasticos/infra/
+      class: ''
+      method: ''
+      line_range:
+      - 1
+      - 1
+    key_classes: []
+    data_models: []
+    protected_files: &id012 []
+    ai_allowed_patterns: []
+    ai_forbidden_patterns: *id012
+    invariants: []

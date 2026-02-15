@@ -1,0 +1,604 @@
+generate_runbook.py:20 __future__ -> annotations
+generate_runbook.py:22 argparse -> 
+generate_runbook.py:23 re -> 
+generate_runbook.py:24 subprocess -> 
+generate_runbook.py:25 sys -> 
+generate_runbook.py:26 datetime -> UTC
+generate_runbook.py:26 datetime -> datetime
+generate_runbook.py:27 pathlib -> Path
+generate_runbook.py:29 structlog -> 
+generate_runbook.py:34 yaml -> 
+extract_code_facts.py:44 ast -> 
+extract_code_facts.py:45 sys -> 
+extract_code_facts.py:46 datetime -> UTC
+extract_code_facts.py:46 datetime -> datetime
+extract_code_facts.py:47 pathlib -> Path
+extract_code_facts.py:48 typing -> Any
+extract_code_facts.py:50 structlog -> 
+extract_code_facts.py:55 yaml -> 
+extract_code_facts.py:165 json -> 
+.workflows/runner.py:32 __future__ -> annotations
+.workflows/runner.py:55 argparse -> 
+.workflows/runner.py:56 json -> 
+.workflows/runner.py:57 os -> 
+.workflows/runner.py:58 re -> 
+.workflows/runner.py:59 subprocess -> 
+.workflows/runner.py:60 sys -> 
+.workflows/runner.py:61 time -> 
+.workflows/runner.py:62 dataclasses -> dataclass
+.workflows/runner.py:62 dataclasses -> field
+.workflows/runner.py:63 datetime -> datetime
+.workflows/runner.py:64 enum -> Enum
+.workflows/runner.py:65 pathlib -> Path
+.workflows/runner.py:66 typing -> Any
+.workflows/runner.py:68 yaml -> 
+.workflows/harvest_executor.py:27 __future__ -> annotations
+.workflows/harvest_executor.py:50 argparse -> 
+.workflows/harvest_executor.py:51 json -> 
+.workflows/harvest_executor.py:52 re -> 
+.workflows/harvest_executor.py:53 subprocess -> 
+.workflows/harvest_executor.py:54 sys -> 
+.workflows/harvest_executor.py:55 dataclasses -> asdict
+.workflows/harvest_executor.py:55 dataclasses -> dataclass
+.workflows/harvest_executor.py:55 dataclasses -> field
+.workflows/harvest_executor.py:56 datetime -> UTC
+.workflows/harvest_executor.py:56 datetime -> datetime
+.workflows/harvest_executor.py:57 pathlib -> Path
+.workflows/migrate_executor.py:28 __future__ -> annotations
+.workflows/migrate_executor.py:51 argparse -> 
+.workflows/migrate_executor.py:52 json -> 
+.workflows/migrate_executor.py:53 re -> 
+.workflows/migrate_executor.py:54 subprocess -> 
+.workflows/migrate_executor.py:55 sys -> 
+.workflows/migrate_executor.py:56 dataclasses -> asdict
+.workflows/migrate_executor.py:56 dataclasses -> dataclass
+.workflows/migrate_executor.py:56 dataclasses -> field
+.workflows/migrate_executor.py:57 datetime -> UTC
+.workflows/migrate_executor.py:57 datetime -> datetime
+.workflows/migrate_executor.py:58 pathlib -> Path
+.workflows/use_harvest_executor.py:27 __future__ -> annotations
+.workflows/use_harvest_executor.py:50 argparse -> 
+.workflows/use_harvest_executor.py:51 json -> 
+.workflows/use_harvest_executor.py:52 subprocess -> 
+.workflows/use_harvest_executor.py:53 sys -> 
+.workflows/use_harvest_executor.py:54 dataclasses -> asdict
+.workflows/use_harvest_executor.py:54 dataclasses -> dataclass
+.workflows/use_harvest_executor.py:54 dataclasses -> field
+.workflows/use_harvest_executor.py:55 datetime -> UTC
+.workflows/use_harvest_executor.py:55 datetime -> datetime
+.workflows/use_harvest_executor.py:56 pathlib -> Path
+.workflows/__init__.py:72 workflows.state -> ExtractionPattern
+.workflows/__init__.py:72 workflows.state -> FileMapping
+.workflows/__init__.py:72 workflows.state -> StepResult
+.workflows/__init__.py:72 workflows.state -> StepStatus
+.workflows/__init__.py:72 workflows.state -> ValidationCheck
+.workflows/__init__.py:72 workflows.state -> WorkflowState
+.workflows/__init__.py:72 workflows.state -> create_initial_state
+.workflows/__init__.py:93 workflows -> dags
+.workflows/__init__.py:94 workflows.session -> GateType
+.workflows/__init__.py:94 workflows.session -> NodeType
+.workflows/__init__.py:94 workflows.session -> SessionDAG
+.workflows/__init__.py:94 workflows.session -> SessionEdge
+.workflows/__init__.py:94 workflows.session -> SessionNode
+.workflows/__init__.py:94 workflows.session -> SessionState
+.workflows/__init__.py:94 workflows.session -> get_session_dag
+.workflows/__init__.py:94 workflows.session -> list_session_dags
+.workflows/__init__.py:94 workflows.session -> register_session_dag
+.workflows/__init__.py:94 workflows.session -> session_dag_registry
+.workflows/__init__.py:85 langgraph.graph -> StateGraph
+.workflows/gmp_executor.py:27 __future__ -> annotations
+.workflows/gmp_executor.py:29 structlog -> 
+.workflows/gmp_executor.py:55 argparse -> 
+.workflows/gmp_executor.py:56 json -> 
+.workflows/gmp_executor.py:57 subprocess -> 
+.workflows/gmp_executor.py:58 sys -> 
+.workflows/gmp_executor.py:59 dataclasses -> asdict
+.workflows/gmp_executor.py:59 dataclasses -> dataclass
+.workflows/gmp_executor.py:59 dataclasses -> field
+.workflows/gmp_executor.py:60 datetime -> datetime
+.workflows/gmp_executor.py:61 enum -> Enum
+.workflows/gmp_executor.py:62 pathlib -> Path
+.workflows/gmp_executor.py:839 re -> 
+.workflows/lint_fix_executor.py:28 __future__ -> annotations
+.workflows/lint_fix_executor.py:51 argparse -> 
+.workflows/lint_fix_executor.py:52 json -> 
+.workflows/lint_fix_executor.py:53 re -> 
+.workflows/lint_fix_executor.py:54 subprocess -> 
+.workflows/lint_fix_executor.py:55 sys -> 
+.workflows/lint_fix_executor.py:56 collections -> Counter
+.workflows/lint_fix_executor.py:57 dataclasses -> asdict
+.workflows/lint_fix_executor.py:57 dataclasses -> dataclass
+.workflows/lint_fix_executor.py:57 dataclasses -> field
+.workflows/lint_fix_executor.py:58 datetime -> UTC
+.workflows/lint_fix_executor.py:58 datetime -> datetime
+.workflows/lint_fix_executor.py:59 pathlib -> Path
+.workflows/wire_executor.py:6 sys -> 
+.workflows/wire_executor.py:7 pathlib -> Path
+.workflows/wire_executor.py:14 core.codegen.wire_executor -> main
+.workflows/harvest_deploy.py:66 __future__ -> annotations
+.workflows/harvest_deploy.py:68 uuid -> 
+.workflows/harvest_deploy.py:69 datetime -> datetime
+.workflows/harvest_deploy.py:70 pathlib -> Path
+.workflows/harvest_deploy.py:71 typing -> Literal
+.workflows/harvest_deploy.py:73 langgraph.graph -> END
+.workflows/harvest_deploy.py:73 langgraph.graph -> START
+.workflows/harvest_deploy.py:73 langgraph.graph -> StateGraph
+.workflows/harvest_deploy.py:75 core.decorators -> must_stay_async
+.workflows/harvest_deploy.py:76 workflows.nodes -> deploy_files_node
+.workflows/harvest_deploy.py:76 workflows.nodes -> extract_files_node
+.workflows/harvest_deploy.py:76 workflows.nodes -> inject_files_node
+.workflows/harvest_deploy.py:76 workflows.nodes -> report_node
+.workflows/harvest_deploy.py:76 workflows.nodes -> validate_node
+.workflows/harvest_deploy.py:83 workflows.state -> ExtractionPattern
+.workflows/harvest_deploy.py:83 workflows.state -> FileMapping
+.workflows/harvest_deploy.py:83 workflows.state -> ValidationCheck
+.workflows/harvest_deploy.py:83 workflows.state -> WorkflowState
+.workflows/harvest_deploy.py:83 workflows.state -> create_initial_state
+.workflows/harvest_deploy.py:258 argparse -> 
+.workflows/harvest_deploy.py:270 sys -> 
+.workflows/harvest_deploy.py:272 yaml -> 
+.workflows/harvest_deploy.py:309 asyncio -> 
+.workflows/gmp_enforcer.py:31 __future__ -> annotations
+.workflows/gmp_enforcer.py:54 argparse -> 
+.workflows/gmp_enforcer.py:55 json -> 
+.workflows/gmp_enforcer.py:56 sys -> 
+.workflows/gmp_enforcer.py:57 dataclasses -> asdict
+.workflows/gmp_enforcer.py:57 dataclasses -> dataclass
+.workflows/gmp_enforcer.py:57 dataclasses -> field
+.workflows/gmp_enforcer.py:58 datetime -> datetime
+.workflows/gmp_enforcer.py:59 enum -> Enum
+.workflows/gmp_enforcer.py:60 pathlib -> Path
+.workflows/gmp_enforcer.py:61 typing -> Any
+.workflows/state.py:14 __future__ -> annotations
+.workflows/state.py:46 datetime -> datetime
+.workflows/state.py:47 enum -> Enum
+.workflows/state.py:48 typing -> Annotated
+.workflows/state.py:48 typing -> Any
+.workflows/state.py:48 typing -> Literal
+.workflows/state.py:48 typing -> TypedDict
+.workflows/state.py:52 langgraph.graph.message -> add_messages
+tools/export_repo_indexes.py:14 __future__ -> annotations
+tools/export_repo_indexes.py:16 ast -> 
+tools/export_repo_indexes.py:17 os -> 
+tools/export_repo_indexes.py:18 re -> 
+tools/export_repo_indexes.py:19 subprocess -> 
+tools/export_repo_indexes.py:20 sys -> 
+tools/export_repo_indexes.py:21 pathlib -> Path
+scripts/generate_subsystem_readmes.py:6 __future__ -> annotations
+scripts/generate_subsystem_readmes.py:8 argparse -> 
+scripts/generate_subsystem_readmes.py:9 os -> 
+scripts/generate_subsystem_readmes.py:10 sys -> 
+scripts/generate_subsystem_readmes.py:11 pathlib -> Path
+scripts/generate_subsystem_readmes.py:14 yaml -> 
+Plasticos/plasticos_transaction/__init__.py:1  -> models
+Plasticos/plasticos_logistics/init.py:1  -> models
+Plasticos/plasticos_logistics/init.py:2  -> services
+Plasticos/tests/test_buyer_matching_matrix.py:1 base_test_case -> PlasticosBaseTest
+Plasticos/tests/test_buyer_matching_matrix.py:2 canonical_intake_templates -> CANONICAL_INTAKES
+Plasticos/tests/test_upgrade_safety.py:1 odoo.tests.common -> TransactionCase
+Plasticos/tests/test_module_installation.py:1 odoo.tests.common -> TransactionCase
+Plasticos/tests/base_test_case.py:1 odoo.tests.common -> TransactionCase
+Plasticos/tests/__init__.py:1  -> base_test_case
+Plasticos/tests/__init__.py:2  -> test_full_replay
+Plasticos/tests/__init__.py:3  -> test_buyer_matching_matrix
+Plasticos/tests/test_full_replay.py:1 base_test_case -> PlasticosBaseTest
+Plasticos/tests/test_full_replay.py:2 canonical_intake_templates -> CANONICAL_INTAKES
+Plasticos/plasticos_documents/init.py:1  -> models
+Plasticos/plasticos_commission/__init__.py:1  -> models
+Plasticos/scripts/replay_intake_matrix.py:6 datetime -> datetime
+Plasticos/l9_integration/__init__.py:1  -> models
+Plasticos/l9_integration/__init__.py:2  -> services
+Plasticos/l9_integration/__init__.py:3  -> controllers
+Plasticos/plasticos_intake/__init__.py:1  -> models
+Plasticos/plasticos_transaction/tests/test_integrity_enforcement.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_integrity_enforcement.py:2 odoo.exceptions -> UserError
+Plasticos/plasticos_transaction/tests/test_concurrency.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_concurrency.py:2 odoo.exceptions -> UserError
+Plasticos/plasticos_transaction/tests/test_security_permissions.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_security_permissions.py:2 odoo.exceptions -> AccessError
+Plasticos/plasticos_transaction/tests/test_sequence_race.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_financial_audit.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_multi_currency.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_close_race.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_close_race.py:2 odoo.exceptions -> UserError
+Plasticos/plasticos_transaction/tests/__init__.py:1  -> test_migration
+Plasticos/plasticos_transaction/tests/__init__.py:2  -> test_sequence_race
+Plasticos/plasticos_transaction/tests/__init__.py:3  -> test_domain_isolation
+Plasticos/plasticos_transaction/tests/__init__.py:4  -> test_concurrency
+Plasticos/plasticos_transaction/tests/__init__.py:5  -> test_integrity_enforcement
+Plasticos/plasticos_transaction/tests/__init__.py:6  -> test_financial_audit
+Plasticos/plasticos_transaction/tests/__init__.py:7  -> test_deterministic_replay
+Plasticos/plasticos_transaction/tests/test_migration.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_migration_safety.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_performance_scale.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_performance_scale.py:2 time -> 
+Plasticos/plasticos_transaction/tests/test_rpc_abuse.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_rpc_abuse.py:2 odoo.exceptions -> UserError
+Plasticos/plasticos_transaction/tests/test_deterministic_replay.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_deterministic_replay.py:2 hashlib -> 
+Plasticos/plasticos_transaction/tests/test_domain_isolation.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_sequence_concurrency.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_compliance_failure.py:1 odoo.tests.common -> TransactionCase
+Plasticos/plasticos_transaction/tests/test_compliance_failure.py:2 odoo.exceptions -> UserError
+Plasticos/plasticos_transaction/models/audit_cron.py:1 odoo -> models
+Plasticos/plasticos_transaction/models/transaction.py:1 odoo -> models
+Plasticos/plasticos_transaction/models/transaction.py:1 odoo -> fields
+Plasticos/plasticos_transaction/models/transaction.py:1 odoo -> api
+Plasticos/plasticos_transaction/models/transaction.py:2 odoo.exceptions -> UserError
+Plasticos/plasticos_transaction/models/sale_inherit.py:1 odoo -> models
+Plasticos/plasticos_transaction/models/sale_inherit.py:1 odoo -> fields
+Plasticos/plasticos_transaction/models/__init__.py:1  -> transaction
+Plasticos/plasticos_transaction/models/__init__.py:2  -> sale_inherit
+Plasticos/plasticos_transaction/models/__init__.py:3  -> purchase_inherit
+Plasticos/plasticos_transaction/models/__init__.py:4  -> account_move_inherit
+Plasticos/plasticos_transaction/models/__init__.py:5  -> load_inherit
+Plasticos/plasticos_transaction/models/load_inherit.py:1 odoo -> models
+Plasticos/plasticos_transaction/models/account_move_inherit.py:1 odoo -> models
+Plasticos/plasticos_transaction/models/account_move_inherit.py:2 odoo.exceptions -> UserError
+Plasticos/plasticos_transaction/migrations/1.1.0/pre-migrate.py:9 odoo -> api
+Plasticos/plasticos_transaction/migrations/1.1.0/pre-migrate.py:9 odoo -> SUPERUSER_ID
+Plasticos/plasticos_transaction/migrations/1.1.0/post-migrate.py:1 odoo -> api
+Plasticos/plasticos_transaction/migrations/1.1.0/post-migrate.py:1 odoo -> SUPERUSER_ID
+Plasticos/plasticos_logistics/models/dispatch.py:1 odoo -> models
+Plasticos/plasticos_logistics/models/dispatch.py:1 odoo -> fields
+Plasticos/plasticos_logistics/models/dispatch.py:2 odoo.addons.l9_trace.services.trace_kernel -> TraceKernel
+Plasticos/plasticos_logistics/models/dispatch.py:3 odoo.addons.l9_trace.services.correlation -> new_correlation_id
+Plasticos/plasticos_logistics/models/sale_order_inherit.py:1 odoo -> models
+Plasticos/plasticos_logistics/models/sale_order_inherit.py:2 services.rate_engine -> get_recent_lane_rate
+Plasticos/plasticos_logistics/models/rate_memory.py:1 odoo -> models
+Plasticos/plasticos_logistics/models/rate_memory.py:1 odoo -> fields
+Plasticos/plasticos_logistics/models/init.py:1  -> load
+Plasticos/plasticos_logistics/models/init.py:2  -> rate_memory
+Plasticos/plasticos_logistics/models/init.py:3  -> sale_order_inherit
+Plasticos/plasticos_logistics/models/init.py:4  -> dispatch
+Plasticos/plasticos_logistics/models/load.py:1 odoo -> models
+Plasticos/plasticos_logistics/models/load.py:1 odoo -> fields
+Plasticos/plasticos_logistics/models/load.py:1 odoo -> api
+Plasticos/plasticos_logistics/models/load.py:2 odoo.exceptions -> UserError
+Plasticos/plasticos_logistics/models/load.py:3 odoo.addons.l9_trace.services.trace_kernel -> TraceKernel
+Plasticos/plasticos_logistics/models/load.py:4 odoo.addons.l9_trace.services.correlation -> new_correlation_id
+Plasticos/plasticos_logistics/models/load.py:131 odoo.addons.logistics.services.escalation_engine -> check_escalations
+Plasticos/plasticos_logistics/services/rate_engine.py:1 datetime -> timedelta
+Plasticos/plasticos_logistics/services/rate_engine.py:2 odoo -> fields
+Plasticos/plasticos_logistics/services/escalation_engine.py:1 odoo -> fields
+Plasticos/plasticos_logistics/services/init.py:1  -> state_machine
+Plasticos/plasticos_logistics/services/init.py:2  -> rate_engine
+Plasticos/plasticos_documents/models/document_tag.py:1 odoo -> models
+Plasticos/plasticos_documents/models/document_tag.py:1 odoo -> fields
+Plasticos/plasticos_documents/models/compliance_service.py:1 odoo -> models
+Plasticos/plasticos_documents/models/document.py:1 odoo -> models
+Plasticos/plasticos_documents/models/document.py:1 odoo -> fields
+Plasticos/plasticos_documents/models/document.py:1 odoo -> api
+Plasticos/plasticos_documents/models/document.py:2 odoo.exceptions -> UserError
+Plasticos/plasticos_documents/models/document_rule.py:1 odoo -> models
+Plasticos/plasticos_documents/models/document_rule.py:1 odoo -> fields
+Plasticos/plasticos_documents/models/init.py:1  -> document
+Plasticos/plasticos_documents/models/init.py:2  -> document_tag
+Plasticos/plasticos_documents/models/init.py:3  -> document_rule
+Plasticos/plasticos_documents/models/init.py:4  -> compliance_service
+Plasticos/plasticos_commission/models/__init__.py:1  -> commission_rule
+Plasticos/plasticos_commission/models/__init__.py:2  -> commission_service
+Plasticos/plasticos_commission/models/commission_rule.py:1 odoo -> models
+Plasticos/plasticos_commission/models/commission_rule.py:1 odoo -> fields
+Plasticos/plasticos_commission/models/commission_service.py:1 odoo -> models
+Plasticos/l9_integration/tests/__init__.py:1  -> test_trace_coverage
+Plasticos/l9_integration/tests/test_trace_coverage.py:1 odoo.tests.common -> TransactionCase
+Plasticos/l9_integration/models/canary_gate.py:1 odoo -> models
+Plasticos/l9_integration/models/canary_gate.py:1 odoo -> fields
+Plasticos/l9_integration/models/canary_gate.py:2 random -> 
+Plasticos/l9_integration/models/drift_detector.py:1 hashlib -> 
+Plasticos/l9_integration/models/drift_detector.py:2 json -> 
+Plasticos/l9_integration/models/drift_detector.py:3 odoo -> models
+Plasticos/l9_integration/models/drift_detector.py:3 odoo -> fields
+Plasticos/l9_integration/models/health_metrics.py:1 odoo -> models
+Plasticos/l9_integration/models/health_metrics.py:1 odoo -> fields
+Plasticos/l9_integration/models/health_metrics.py:1 odoo -> api
+Plasticos/l9_integration/models/rollback_controller.py:1 odoo -> models
+Plasticos/l9_integration/models/kpi_metrics.py:1 odoo -> models
+Plasticos/l9_integration/models/kpi_metrics.py:1 odoo -> fields
+Plasticos/l9_integration/models/kpi_metrics.py:1 odoo -> api
+Plasticos/l9_integration/models/__init__.py:1  -> adapter_service
+Plasticos/l9_integration/models/__init__.py:2  -> canary_gate
+Plasticos/l9_integration/models/__init__.py:3  -> drift_detector
+Plasticos/l9_integration/models/__init__.py:4  -> health_metrics
+Plasticos/l9_integration/models/__init__.py:5  -> kpi_metrics
+Plasticos/l9_integration/models/__init__.py:6  -> regression_detector
+Plasticos/l9_integration/models/__init__.py:7  -> rollback_controller
+Plasticos/l9_integration/models/__init__.py:8  -> shadow_log
+Plasticos/l9_integration/models/adapter_service.py:1 odoo -> models
+Plasticos/l9_integration/models/adapter_service.py:1 odoo -> fields
+Plasticos/l9_integration/models/adapter_service.py:2 odoo.exceptions -> UserError
+Plasticos/l9_integration/models/adapter_service.py:4 services.packet_builder -> build_intake_packet
+Plasticos/l9_integration/models/adapter_service.py:5 services.http_client -> post_json
+Plasticos/l9_integration/models/adapter_service.py:6 services.idempotency -> make_packet_id
+Plasticos/l9_integration/models/adapter_service.py:8 odoo.addons.l9_trace.services.trace_kernel -> TraceKernel
+Plasticos/l9_integration/models/adapter_service.py:9 odoo.addons.l9_trace.services.correlation -> new_correlation_id
+Plasticos/l9_integration/models/regression_detector.py:1 odoo -> models
+Plasticos/l9_integration/models/regression_detector.py:1 odoo -> fields
+Plasticos/l9_integration/models/regression_detector.py:1 odoo -> api
+Plasticos/l9_integration/models/shadow_log.py:1 odoo -> models
+Plasticos/l9_integration/models/shadow_log.py:1 odoo -> fields
+Plasticos/l9_integration/controllers/metrics.py:1 odoo -> http
+Plasticos/l9_integration/controllers/metrics.py:2 odoo.http -> request
+Plasticos/l9_integration/controllers/__init__.py:1  -> metrics
+Plasticos/l9_integration/services/http_client.py:1 json -> 
+Plasticos/l9_integration/services/http_client.py:2 time -> 
+Plasticos/l9_integration/services/http_client.py:3 urllib.request -> 
+Plasticos/l9_integration/services/http_client.py:4 urllib.error -> URLError
+Plasticos/l9_integration/services/http_client.py:4 urllib.error -> HTTPError
+Plasticos/l9_integration/services/idempotency.py:1 hashlib -> 
+Plasticos/l9_integration/services/__init__.py:1  -> packet_builder
+Plasticos/l9_integration/services/__init__.py:2  -> http_client
+Plasticos/l9_integration/services/__init__.py:3  -> idempotency
+Plasticos/l9_integration/services/__init__.py:4  -> otel_bridge
+Plasticos/l9_integration/services/otel_bridge.py:1 opentelemetry -> trace
+Plasticos/l9_integration/services/otel_bridge.py:2 opentelemetry.sdk.trace -> TracerProvider
+Plasticos/l9_integration/services/otel_bridge.py:3 opentelemetry.sdk.trace.export -> BatchSpanProcessor
+Plasticos/l9_integration/services/otel_bridge.py:3 opentelemetry.sdk.trace.export -> OTLPSpanExporter
+Plasticos/plasticos_intake/models/intake.py:1 odoo -> models
+Plasticos/plasticos_intake/models/intake.py:1 odoo -> fields
+Plasticos/plasticos_intake/models/intake.py:1 odoo -> api
+Plasticos/plasticos_intake/models/intake.py:2 odoo.exceptions -> ValidationError
+Plasticos/plasticos_intake/models/intake.py:2 odoo.exceptions -> UserError
+Plasticos/plasticos_intake/models/__init__.py:1  -> intake
+.workflows/dags/dag_authoring_dag.py:44 workflows.session.interface -> GateType
+.workflows/dags/dag_authoring_dag.py:44 workflows.session.interface -> NodeType
+.workflows/dags/dag_authoring_dag.py:44 workflows.session.interface -> SessionDAG
+.workflows/dags/dag_authoring_dag.py:44 workflows.session.interface -> SessionEdge
+.workflows/dags/dag_authoring_dag.py:44 workflows.session.interface -> SessionNode
+.workflows/dags/dag_authoring_dag.py:51 workflows.session.registry -> register_session_dag
+.workflows/dags/gmp_execution_dag.py:42 workflows.session.interface -> GateType
+.workflows/dags/gmp_execution_dag.py:42 workflows.session.interface -> NodeType
+.workflows/dags/gmp_execution_dag.py:42 workflows.session.interface -> SessionDAG
+.workflows/dags/gmp_execution_dag.py:42 workflows.session.interface -> SessionEdge
+.workflows/dags/gmp_execution_dag.py:42 workflows.session.interface -> SessionNode
+.workflows/dags/gmp_execution_dag.py:49 workflows.session.registry -> register_session_dag
+.workflows/dags/confirm_wiring_dag.py:41 workflows.session.interface -> NodeType
+.workflows/dags/confirm_wiring_dag.py:41 workflows.session.interface -> SessionDAG
+.workflows/dags/confirm_wiring_dag.py:41 workflows.session.interface -> SessionEdge
+.workflows/dags/confirm_wiring_dag.py:41 workflows.session.interface -> SessionNode
+.workflows/dags/test_pipeline_dag.py:40 workflows.session.interface -> GateType
+.workflows/dags/test_pipeline_dag.py:40 workflows.session.interface -> NodeType
+.workflows/dags/test_pipeline_dag.py:40 workflows.session.interface -> SessionDAG
+.workflows/dags/test_pipeline_dag.py:40 workflows.session.interface -> SessionEdge
+.workflows/dags/test_pipeline_dag.py:40 workflows.session.interface -> SessionNode
+.workflows/dags/test_pipeline_dag.py:47 workflows.session.registry -> register_session_dag
+.workflows/dags/slash_command_update_dag.py:45 workflows.session.interface -> GateType
+.workflows/dags/slash_command_update_dag.py:45 workflows.session.interface -> NodeType
+.workflows/dags/slash_command_update_dag.py:45 workflows.session.interface -> SessionDAG
+.workflows/dags/slash_command_update_dag.py:45 workflows.session.interface -> SessionEdge
+.workflows/dags/slash_command_update_dag.py:45 workflows.session.interface -> SessionNode
+.workflows/dags/slash_command_update_dag.py:52 workflows.session.registry -> register_session_dag
+.workflows/dags/readme_pipeline_dag.py:39 workflows.session.interface -> GateType
+.workflows/dags/readme_pipeline_dag.py:39 workflows.session.interface -> NodeType
+.workflows/dags/readme_pipeline_dag.py:39 workflows.session.interface -> SessionDAG
+.workflows/dags/readme_pipeline_dag.py:39 workflows.session.interface -> SessionEdge
+.workflows/dags/readme_pipeline_dag.py:39 workflows.session.interface -> SessionNode
+.workflows/dags/readme_pipeline_dag.py:46 workflows.session.registry -> register_session_dag
+.workflows/dags/__init__.py:39 workflows.dags.component_audit_dag -> COMPONENT_AUDIT_DAG
+.workflows/dags/__init__.py:40 workflows.dags.confirm_wiring_dag -> CONFIRM_WIRING_DAG
+.workflows/dags/__init__.py:41 workflows.dags.dag_authoring_dag -> DAG_AUTHORING_DAG
+.workflows/dags/__init__.py:42 workflows.dags.gmp_execution_dag -> GMP_EXECUTION_DAG
+.workflows/dags/__init__.py:43 workflows.dags.harvest_deploy_dag -> HARVEST_DEPLOY_DAG
+.workflows/dags/__init__.py:46 workflows.dags.inspect_dag -> INSPECT_DAG
+.workflows/dags/__init__.py:46 workflows.dags.inspect_dag -> InspectState
+.workflows/dags/__init__.py:46 workflows.dags.inspect_dag -> build_inspect_graph
+.workflows/dags/__init__.py:46 workflows.dags.inspect_dag -> run_inspect
+.workflows/dags/__init__.py:52 workflows.dags.readme_pipeline_dag -> README_PIPELINE_DAG
+.workflows/dags/__init__.py:53 workflows.dags.refactoring_dag -> REFACTORING_DAG
+.workflows/dags/__init__.py:54 workflows.dags.slash_command_update_dag -> SLASH_COMMAND_UPDATE_DAG
+.workflows/dags/__init__.py:55 workflows.dags.test_pipeline_dag -> TEST_PIPELINE_DAG
+.workflows/dags/__init__.py:56 workflows.dags.wire_dag -> WIRE_DAG
+.workflows/dags/wire_dag.py:47 workflows.session.interface -> GateType
+.workflows/dags/wire_dag.py:47 workflows.session.interface -> NodeType
+.workflows/dags/wire_dag.py:47 workflows.session.interface -> SessionDAG
+.workflows/dags/wire_dag.py:47 workflows.session.interface -> SessionEdge
+.workflows/dags/wire_dag.py:47 workflows.session.interface -> SessionNode
+.workflows/dags/wire_dag.py:54 workflows.session.registry -> register_session_dag
+.workflows/dags/harvest_deploy_dag.py:18 workflows.session.interface -> GateType
+.workflows/dags/harvest_deploy_dag.py:18 workflows.session.interface -> NodeType
+.workflows/dags/harvest_deploy_dag.py:18 workflows.session.interface -> SessionDAG
+.workflows/dags/harvest_deploy_dag.py:18 workflows.session.interface -> SessionEdge
+.workflows/dags/harvest_deploy_dag.py:18 workflows.session.interface -> SessionNode
+.workflows/dags/harvest_deploy_dag.py:25 workflows.session.registry -> register_session_dag
+.workflows/dags/component_audit_dag.py:45 workflows.session.interface -> GateType
+.workflows/dags/component_audit_dag.py:45 workflows.session.interface -> NodeType
+.workflows/dags/component_audit_dag.py:45 workflows.session.interface -> SessionDAG
+.workflows/dags/component_audit_dag.py:45 workflows.session.interface -> SessionEdge
+.workflows/dags/component_audit_dag.py:45 workflows.session.interface -> SessionNode
+.workflows/dags/component_audit_dag.py:52 workflows.session.registry -> register_session_dag
+.workflows/dags/refactoring_dag.py:39 workflows.session.interface -> GateType
+.workflows/dags/refactoring_dag.py:39 workflows.session.interface -> NodeType
+.workflows/dags/refactoring_dag.py:39 workflows.session.interface -> SessionDAG
+.workflows/dags/refactoring_dag.py:39 workflows.session.interface -> SessionEdge
+.workflows/dags/refactoring_dag.py:39 workflows.session.interface -> SessionNode
+.workflows/dags/refactoring_dag.py:46 workflows.session.registry -> register_session_dag
+.workflows/dags/gmp_langgraph_executor.py:16 workflows.dags.gmp -> GMPLangGraphExecutor
+.workflows/dags/gmp_langgraph_executor.py:16 workflows.dags.gmp -> GMPPhase
+.workflows/dags/gmp_langgraph_executor.py:16 workflows.dags.gmp -> GMPState
+.workflows/dags/gmp_langgraph_executor.py:16 workflows.dags.gmp -> build_gmp_graph
+.workflows/dags/gmp_langgraph_executor.py:16 workflows.dags.gmp -> main
+.workflows/dags/gmp_langgraph_executor.py:23 workflows.dags.gmp.nodes -> node_aborted
+.workflows/dags/gmp_langgraph_executor.py:23 workflows.dags.gmp.nodes -> node_baseline
+.workflows/dags/gmp_langgraph_executor.py:23 workflows.dags.gmp.nodes -> node_end
+.workflows/dags/gmp_langgraph_executor.py:23 workflows.dags.gmp.nodes -> node_finalize
+.workflows/dags/gmp_langgraph_executor.py:23 workflows.dags.gmp.nodes -> node_implement
+.workflows/dags/gmp_langgraph_executor.py:23 workflows.dags.gmp.nodes -> node_memory_read
+.workflows/dags/gmp_langgraph_executor.py:23 workflows.dags.gmp.nodes -> node_memory_write
+.workflows/dags/gmp_langgraph_executor.py:23 workflows.dags.gmp.nodes -> node_scope_lock
+.workflows/dags/gmp_langgraph_executor.py:23 workflows.dags.gmp.nodes -> node_start
+.workflows/dags/gmp_langgraph_executor.py:23 workflows.dags.gmp.nodes -> node_validate
+.workflows/dags/gmp_langgraph_executor.py:35 workflows.dags.gmp.routing -> route_after_scope_lock
+.workflows/dags/gmp_langgraph_executor.py:35 workflows.dags.gmp.routing -> route_after_validation
+.workflows/dags/inspect_dag.py:37 ast -> 
+.workflows/dags/inspect_dag.py:38 pathlib -> Path
+.workflows/dags/inspect_dag.py:39 typing -> Any
+.workflows/dags/inspect_dag.py:39 typing -> Literal
+.workflows/dags/inspect_dag.py:41 structlog -> 
+.workflows/dags/inspect_dag.py:42 langgraph.graph -> END
+.workflows/dags/inspect_dag.py:42 langgraph.graph -> START
+.workflows/dags/inspect_dag.py:42 langgraph.graph -> StateGraph
+.workflows/dags/inspect_dag.py:43 pydantic -> BaseModel
+.workflows/dags/inspect_dag.py:43 pydantic -> Field
+.workflows/dags/inspect_dag.py:45 core.decorators -> must_stay_async
+.workflows/dags/inspect_dag.py:46 tools.validation.validate_external_code -> ValidationIssue
+.workflows/dags/inspect_dag.py:46 tools.validation.validate_external_code -> extract_python_code_blocks
+.workflows/dags/inspect_dag.py:46 tools.validation.validate_external_code -> validate_adr_compliance
+.workflows/dags/inspect_dag.py:46 tools.validation.validate_external_code -> validate_config_values
+.workflows/dags/inspect_dag.py:46 tools.validation.validate_external_code -> validate_imports
+.workflows/nodes/deploy.py:7 __future__ -> annotations
+.workflows/nodes/deploy.py:9 asyncio -> 
+.workflows/nodes/deploy.py:10 time -> 
+.workflows/nodes/deploy.py:11 datetime -> datetime
+.workflows/nodes/deploy.py:12 pathlib -> Path
+.workflows/nodes/deploy.py:14 structlog -> 
+.workflows/nodes/deploy.py:16 core.decorators -> must_stay_async
+.workflows/nodes/deploy.py:17 workflows.state -> StepResult
+.workflows/nodes/deploy.py:17 workflows.state -> WorkflowState
+.workflows/nodes/checkpoint.py:7 __future__ -> annotations
+.workflows/nodes/checkpoint.py:9 core.decorators -> must_stay_async
+.workflows/nodes/checkpoint.py:32 time -> 
+.workflows/nodes/checkpoint.py:33 datetime -> datetime
+.workflows/nodes/checkpoint.py:35 structlog -> 
+.workflows/nodes/checkpoint.py:37 workflows.state -> StepResult
+.workflows/nodes/checkpoint.py:37 workflows.state -> WorkflowState
+.workflows/nodes/__init__.py:32 workflows.nodes.checkpoint -> checkpoint_node
+.workflows/nodes/__init__.py:33 workflows.nodes.deploy -> deploy_files_node
+.workflows/nodes/__init__.py:34 workflows.nodes.extract -> extract_files_node
+.workflows/nodes/__init__.py:35 workflows.nodes.inject -> inject_files_node
+.workflows/nodes/__init__.py:36 workflows.nodes.report -> report_node
+.workflows/nodes/__init__.py:37 workflows.nodes.validate -> validate_node
+.workflows/nodes/validate.py:7 __future__ -> annotations
+.workflows/nodes/validate.py:9 core.decorators -> must_stay_async
+.workflows/nodes/validate.py:32 asyncio -> 
+.workflows/nodes/validate.py:33 time -> 
+.workflows/nodes/validate.py:34 datetime -> datetime
+.workflows/nodes/validate.py:35 pathlib -> Path
+.workflows/nodes/validate.py:37 structlog -> 
+.workflows/nodes/validate.py:39 workflows.state -> StepResult
+.workflows/nodes/validate.py:39 workflows.state -> ValidationCheck
+.workflows/nodes/validate.py:39 workflows.state -> WorkflowState
+.workflows/nodes/inject.py:7 __future__ -> annotations
+.workflows/nodes/inject.py:9 core.decorators -> must_stay_async
+.workflows/nodes/inject.py:32 asyncio -> 
+.workflows/nodes/inject.py:33 time -> 
+.workflows/nodes/inject.py:34 datetime -> datetime
+.workflows/nodes/inject.py:35 pathlib -> Path
+.workflows/nodes/inject.py:37 structlog -> 
+.workflows/nodes/inject.py:39 workflows.state -> StepResult
+.workflows/nodes/inject.py:39 workflows.state -> WorkflowState
+.workflows/nodes/extract.py:7 __future__ -> annotations
+.workflows/nodes/extract.py:9 core.decorators -> must_stay_async
+.workflows/nodes/extract.py:32 asyncio -> 
+.workflows/nodes/extract.py:33 time -> 
+.workflows/nodes/extract.py:34 datetime -> datetime
+.workflows/nodes/extract.py:35 pathlib -> Path
+.workflows/nodes/extract.py:37 structlog -> 
+.workflows/nodes/extract.py:39 workflows.state -> StepResult
+.workflows/nodes/extract.py:39 workflows.state -> WorkflowState
+.workflows/nodes/report.py:7 __future__ -> annotations
+.workflows/nodes/report.py:9 core.decorators -> must_stay_async
+.workflows/nodes/report.py:32 time -> 
+.workflows/nodes/report.py:33 datetime -> datetime
+.workflows/nodes/report.py:35 structlog -> 
+.workflows/nodes/report.py:37 workflows.state -> StepResult
+.workflows/nodes/report.py:37 workflows.state -> WorkflowState
+.workflows/session/registry.py:10 __future__ -> annotations
+.workflows/session/registry.py:37 typing -> Any
+.workflows/session/registry.py:39 structlog -> 
+.workflows/session/registry.py:49 workflows.session.interface -> SessionDAG
+.workflows/session/registry.py:43 structlog -> 
+.workflows/session/interface.py:13 __future__ -> annotations
+.workflows/session/interface.py:41 dataclasses -> dataclass
+.workflows/session/interface.py:41 dataclasses -> field
+.workflows/session/interface.py:42 enum -> Enum
+.workflows/session/interface.py:43 typing -> Any
+.workflows/session/__init__.py:36 workflows.session.interface -> GateType
+.workflows/session/__init__.py:36 workflows.session.interface -> NodeType
+.workflows/session/__init__.py:36 workflows.session.interface -> SessionDAG
+.workflows/session/__init__.py:36 workflows.session.interface -> SessionEdge
+.workflows/session/__init__.py:36 workflows.session.interface -> SessionNode
+.workflows/session/__init__.py:36 workflows.session.interface -> SessionState
+.workflows/session/__init__.py:44 workflows.session.registry -> get_session_dag
+.workflows/session/__init__.py:44 workflows.session.registry -> list_session_dags
+.workflows/session/__init__.py:44 workflows.session.registry -> register_session_dag
+.workflows/session/__init__.py:44 workflows.session.registry -> session_dag_registry
+.workflows/dags/gmp/graph.py:9 __future__ -> annotations
+.workflows/dags/gmp/graph.py:11 langgraph.graph -> END
+.workflows/dags/gmp/graph.py:11 langgraph.graph -> START
+.workflows/dags/gmp/graph.py:11 langgraph.graph -> StateGraph
+.workflows/dags/gmp/graph.py:13 workflows.dags.gmp.nodes -> node_aborted
+.workflows/dags/gmp/graph.py:13 workflows.dags.gmp.nodes -> node_baseline
+.workflows/dags/gmp/graph.py:13 workflows.dags.gmp.nodes -> node_end
+.workflows/dags/gmp/graph.py:13 workflows.dags.gmp.nodes -> node_finalize
+.workflows/dags/gmp/graph.py:13 workflows.dags.gmp.nodes -> node_implement
+.workflows/dags/gmp/graph.py:13 workflows.dags.gmp.nodes -> node_memory_read
+.workflows/dags/gmp/graph.py:13 workflows.dags.gmp.nodes -> node_memory_write
+.workflows/dags/gmp/graph.py:13 workflows.dags.gmp.nodes -> node_scope_lock
+.workflows/dags/gmp/graph.py:13 workflows.dags.gmp.nodes -> node_start
+.workflows/dags/gmp/graph.py:13 workflows.dags.gmp.nodes -> node_validate
+.workflows/dags/gmp/graph.py:25 workflows.dags.gmp.routing -> route_after_scope_lock
+.workflows/dags/gmp/graph.py:25 workflows.dags.gmp.routing -> route_after_validation
+.workflows/dags/gmp/graph.py:29 workflows.dags.gmp.state -> GMPState
+.workflows/dags/gmp/__init__.py:32 workflows.dags.gmp.executor -> GMPLangGraphExecutor
+.workflows/dags/gmp/__init__.py:32 workflows.dags.gmp.executor -> main
+.workflows/dags/gmp/__init__.py:33 workflows.dags.gmp.graph -> build_gmp_graph
+.workflows/dags/gmp/__init__.py:34 workflows.dags.gmp.state -> GMPPhase
+.workflows/dags/gmp/__init__.py:34 workflows.dags.gmp.state -> GMPState
+.workflows/dags/gmp/routing.py:8 __future__ -> annotations
+.workflows/dags/gmp/routing.py:10 typing -> Literal
+.workflows/dags/gmp/routing.py:12 workflows.dags.gmp.state -> GMPState
+.workflows/dags/gmp/executor.py:8 __future__ -> annotations
+.workflows/dags/gmp/executor.py:10 os -> 
+.workflows/dags/gmp/executor.py:11 datetime -> UTC
+.workflows/dags/gmp/executor.py:11 datetime -> datetime
+.workflows/dags/gmp/executor.py:12 typing -> Any
+.workflows/dags/gmp/executor.py:14 structlog -> 
+.workflows/dags/gmp/executor.py:15 langgraph.checkpoint.memory -> MemorySaver
+.workflows/dags/gmp/executor.py:17 workflows.dags.gmp.graph -> build_gmp_graph
+.workflows/dags/gmp/executor.py:18 workflows.dags.gmp.state -> GMPState
+.workflows/dags/gmp/executor.py:194 argparse -> 
+.workflows/dags/gmp/executor.py:32 langgraph.checkpoint.redis -> RedisSaver
+.workflows/dags/gmp/state.py:5 __future__ -> annotations
+.workflows/dags/gmp/state.py:7 dataclasses -> dataclass
+.workflows/dags/gmp/state.py:7 dataclasses -> field
+.workflows/dags/gmp/state.py:8 datetime -> UTC
+.workflows/dags/gmp/state.py:8 datetime -> datetime
+.workflows/dags/gmp/state.py:9 enum -> Enum
+.workflows/dags/gmp/state.py:10 typing -> Any
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> node_aborted
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> node_baseline
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> node_end
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> node_finalize
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> node_implement
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> node_memory_read
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> node_memory_write
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> node_scope_lock
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> node_start
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> node_validate
+.workflows/dags/gmp/nodes/__init__.py:5 workflows.dags.gmp.nodes.core -> route_after_validation
+.workflows/dags/gmp/nodes/core.py:9 __future__ -> annotations
+.workflows/dags/gmp/nodes/core.py:11 json -> 
+.workflows/dags/gmp/nodes/core.py:12 re -> 
+.workflows/dags/gmp/nodes/core.py:13 subprocess -> 
+.workflows/dags/gmp/nodes/core.py:14 datetime -> UTC
+.workflows/dags/gmp/nodes/core.py:14 datetime -> datetime
+.workflows/dags/gmp/nodes/core.py:15 pathlib -> Path
+.workflows/dags/gmp/nodes/core.py:16 typing -> Any
+.workflows/dags/gmp/nodes/core.py:18 structlog -> 
+.workflows/dags/gmp/nodes/core.py:20 workflows.dags.gmp.state -> GMPPhase
+.workflows/dags/gmp/nodes/core.py:20 workflows.dags.gmp.state -> GMPState
+.workflows/dags/gmp/nodes/core.py:132 asyncio -> 
+.workflows/dags/gmp/nodes/core.py:506 asyncio -> 
+.workflows/dags/gmp/nodes/core.py:37 memory.retrieval -> MemoryRetrievalService
+.workflows/dags/gmp/nodes/core.py:73 memory.ingestion -> ingest_packet
+.workflows/dags/gmp/nodes/core.py:74 memory.substrate_models -> PacketEnvelopeIn
+.workflows/dags/gmp/nodes/core.py:138 concurrent.futures -> 
+.workflows/dags/gmp/nodes/core.py:518 concurrent.futures -> 
+.workflows/session/dags/wire_dag.py:26 structlog -> 
+.workflows/session/dags/wire_dag.py:28 workflows.session.interface -> GateType
+.workflows/session/dags/wire_dag.py:28 workflows.session.interface -> NodeType
+.workflows/session/dags/wire_dag.py:28 workflows.session.interface -> SessionDAG
+.workflows/session/dags/wire_dag.py:28 workflows.session.interface -> SessionEdge
+.workflows/session/dags/wire_dag.py:28 workflows.session.interface -> SessionNode
+.workflows/session/dags/wire_dag.py:35 workflows.session.registry -> register_session_dag

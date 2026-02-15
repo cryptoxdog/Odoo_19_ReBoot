@@ -1,0 +1,25 @@
+{
+    "name": "L9 Integration",
+    "version": "1.0.0",
+    "summary": "Consolidated L9 integration: adapter, canary, drift, health, KPI, observability, prometheus, regression, rollback, shadow",
+    "author": "PlasticOS",
+    "depends": [
+        "base",
+        "l9_trace",
+        "plasticos_intake",
+        "plasticos_material",
+        "plasticos_processing",
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/health_dashboard.xml",
+        "views/kpi_dashboard.xml",
+        "data/drift_cron.xml",
+        "data/health_cron.xml",
+        "data/regression_cron.xml",
+        "data/rollback_cron.xml",
+    ],
+    "installable": True,
+    "application": False,
+    "license": "LGPL-3",
+}

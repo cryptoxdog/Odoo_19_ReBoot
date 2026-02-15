@@ -14,4 +14,3 @@ class PurchaseOrder(models.Model):
                     so.transaction_id.purchase_order_ids = [(4, rec.id)]
 
         return res
-💵 ACCOUNT MOVE LINKING

@@ -13,7 +13,7 @@ FORBIDDEN = [
 ]
 
 ALLOW_DIRS = {
-    os.path.join(PLASTICOS, "l9_adapter"),
+    os.path.join(PLASTICOS, "l9_integration"),
 }
 
 def is_allowed(path: str) -> bool:
@@ -38,7 +38,7 @@ def main() -> int:
                 if re.search(pat, txt):
                     bad.append((path, pat))
     if bad:
-        print("FORBIDDEN network call patterns found outside Plasticos/l9_adapter:")
+        print("FORBIDDEN network call patterns found outside Plasticos/l9_integration:")
         for p, pat in bad:
             print(f"- {p}  (pattern: {pat})")
         return 1
@@ -46,4 +46,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-B) CI workflow to run replay tests (no clicking)

@@ -8,9 +8,9 @@
                 <field name="revenue_total"/>
                 <field name="cost_total"/>
                 <field name="gross_margin"/>
-                <field name="commission_amount"/>
-                <field name="net_margin"/>
+                <field name="compliance_status"/>
                 <field name="state"/>
             </tree>
         </field>
     </record>
+</odoo>

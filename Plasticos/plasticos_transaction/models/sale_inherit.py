@@ -16,6 +16,6 @@ class SaleOrder(models.Model):
                     "sale_order_id": rec.id
                 })
                 rec.transaction_id = transaction.id
+                transaction.action_activate()
 
         return res
-🛒 PURCHASE ORDER LINKING

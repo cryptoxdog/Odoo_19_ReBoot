@@ -2,14 +2,7 @@
 /*
 !.gitignore
 !/.github
-
-# Ignore addons except these five modules
-addons/
-!/addons/plasticos_commission/
-!/addons/plasticos_documents/
-!/addons/plasticos_intake/
-!/addons/plasticos_logistics/
-!/addons/plasticos_transaction/
+!/addons
 
 # Environment and secrets
 .env

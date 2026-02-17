@@ -1,6 +1,16 @@
 from odoo import models, fields
-from odoo.addons.l9_trace.services.trace_kernel import TraceKernel
-from odoo.addons.l9_trace.services.correlation import new_correlation_id
+import uuid
+import logging
+
+_logger = logging.getLogger(__name__)
+
+# Stub for l9_trace (enable when module available)
+# from odoo.addons.l9_trace.services.trace_kernel import TraceKernel
+# from odoo.addons.l9_trace.services.correlation import new_correlation_id
+
+def new_correlation_id():
+    """Generate correlation ID (stub for l9_trace)"""
+    return str(uuid.uuid4())
 
 
 class PlasticosDispatch(models.Model):
@@ -19,10 +29,10 @@ class PlasticosDispatch(models.Model):
     def action_transition(self, new_state):
         for rec in self:
             correlation_id = new_correlation_id()
-            trace = TraceKernel(self.env, service_name="plasticos_dispatch", correlation_id=correlation_id)
-            span = trace.start_span("state_transition", "system")
+            old_state = rec.state
             rec.state = new_state
-            trace.event(span, "dispatch_state_changed", {
-                "dispatch_id": rec.id,
-                "new_state": new_state
-            })
+            # Log state transition (l9_trace integration disabled)
+            _logger.info(
+                "Dispatch %s state transition: %s -> %s (correlation: %s)",
+                rec.id, old_state, new_state, correlation_id
+            )

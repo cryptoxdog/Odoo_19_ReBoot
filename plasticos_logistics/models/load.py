@@ -1,7 +1,17 @@
 from odoo import models, fields, api
 from odoo.exceptions import UserError
-from odoo.addons.l9_trace.services.trace_kernel import TraceKernel
-from odoo.addons.l9_trace.services.correlation import new_correlation_id
+import uuid
+import logging
+
+_logger = logging.getLogger(__name__)
+
+# Stub for l9_trace (enable when module available)
+# from odoo.addons.l9_trace.services.trace_kernel import TraceKernel
+# from odoo.addons.l9_trace.services.correlation import new_correlation_id
+
+def new_correlation_id():
+    """Generate correlation ID (stub for l9_trace)"""
+    return str(uuid.uuid4())
 
 
 class PlasticosLoad(models.Model):
@@ -99,8 +109,6 @@ class PlasticosLoad(models.Model):
     def _transition(self, new_state):
         for rec in self:
             correlation_id = new_correlation_id()
-            trace = TraceKernel(self.env, service_name="logistics", correlation_id=correlation_id)
-            span = trace.start_span("state_transition", "system")
             old = rec.state
             vals = {"state": new_state, "entered_state_at": fields.Datetime.now()}
             if new_state == "dispatched":
@@ -108,12 +116,11 @@ class PlasticosLoad(models.Model):
             if new_state == "delivered":
                 vals["delivered_at"] = fields.Datetime.now()
             rec.write(vals)
-            trace.event(span, "state_change", {
-                "load_id": rec.id,
-                "from": old,
-                "to": new_state
-            })
-            trace.finalize("ok")
+            # Log state transition (l9_trace integration disabled)
+            _logger.info(
+                "Load %s state transition: %s -> %s (correlation: %s)",
+                rec.id, old, new_state, correlation_id
+            )
 
     def _store_rate_memory(self):
         self.env["plasticos.rate.memory"].create({

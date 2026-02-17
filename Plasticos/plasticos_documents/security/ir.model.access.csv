@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_document_user,document.user,model_plasticos_document,plasticos_documents.group_documents_user,1,1,1,0
-access_document_manager,document.manager,model_plasticos_document,plasticos_documents.group_documents_manager,1,1,1,1
-access_document_tag_admin,document.tag.admin,model_plasticos_document_tag,base.group_system,1,1,1,1
-access_document_rule_admin,document.rule.admin,model_plasticos_document_rule,base.group_system,1,1,1,1

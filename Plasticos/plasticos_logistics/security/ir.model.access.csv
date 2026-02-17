@@ -1,7 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_load_user,plasticos.load.user,model_plasticos_load,base.group_user,1,1,1,0
-access_load_manager,plasticos.load.manager,model_plasticos_load,base.group_system,1,1,1,1
-access_rate_memory_user,plasticos.rate.memory.user,model_plasticos_rate_memory,base.group_user,1,0,0,0
-access_rate_memory_manager,plasticos.rate.memory.manager,model_plasticos_rate_memory,base.group_system,1,1,1,1
-access_dispatch_user,plasticos.dispatch.user,model_plasticos_dispatch,base.group_user,1,1,1,0
-access_dispatch_manager,plasticos.dispatch.manager,model_plasticos_dispatch,base.group_system,1,1,1,1

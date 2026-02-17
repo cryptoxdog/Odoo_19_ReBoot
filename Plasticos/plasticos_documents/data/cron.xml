@@ -1,9 +1,0 @@
-<odoo>
-    <record id="cron_document_compliance_check" model="ir.cron">
-        <field name="name">Document Compliance Audit</field>
-        <field name="model_id" ref="model_plasticos_compliance_service"/>
-        <field name="state">code</field>
-        <field name="code">model.search([])</field>
-        <field name="interval_number">6</field>
-        <field name="interval_type">hours</field>
-    </record>

@@ -17,3 +17,10 @@ PlasticOS/
 scripts/
 telemetry/
 tools/
+
+# Ignore test folders (not ready for CI)
+plasticos_transaction/tests/
+plasticos_intake/tests/
+plasticos_logistics/tests/
+plasticos_documents/tests/
+plasticos_commission/tests/

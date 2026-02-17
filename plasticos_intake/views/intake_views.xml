@@ -27,7 +27,7 @@
                         <field name="name"/>
                         <field name="partner_id"/>
                         <field name="facility_id"/>
-                        <field name="processing_profile_id"/>
+                        <!-- processing_profile_id: enable when plasticos_processing module available -->
                     </group>
 
                     <group string="Raw Description">

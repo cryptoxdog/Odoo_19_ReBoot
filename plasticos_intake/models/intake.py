@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, Constraint
 from odoo.exceptions import ValidationError, UserError
 
 
@@ -135,9 +135,8 @@ class PlasticosIntake(models.Model):
     last_packet_payload = fields.Json()
     last_packet_ts = fields.Datetime()
 
-    _sql_constraints = [
-        (
-            "unique_packet_per_version",
+    _constraints = [
+        Constraint(
             "unique(last_packet_id, last_packet_version)",
             "Duplicate packet emission detected.",
         )

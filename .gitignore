@@ -1,5 +1,4 @@
-# Ignore ONLY these paths (no "ignore everything at root")
-.gitignore
+# Ignore ONLY these paths
 .suite6-config.json
 addons.zip
 extract_code_facts.py
@@ -18,4 +17,3 @@ PlasticOS/
 scripts/
 telemetry/
 tools/
-addons/

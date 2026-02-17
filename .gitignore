@@ -1,26 +1,21 @@
-# Ignore everything at repo root
-/*
-!.gitignore
-!/.github
-!/addons
-
-# Environment and secrets
-.env
-.env.*
-!.env.template
-
-# OS and IDE
-.DS_Store
-*.pyc
-__pycache__/
-*.pyo
-
-# Local / generated
-.venv/
-venv/
-
-# Source and harvest (local / not for repo)
+# Ignore ONLY these paths (no "ignore everything at root")
+.gitignore
+.suite6-config.json
+addons.zip
+extract_code_facts.py
+generate_runbook.py
+Makefile
 _Source Files/
 .cursor/
 .cursor-commands/
+.workflows/
+addons/
+config/
+docs/
 Files To Harvest/
+l9_trace/
+PlasticOS/
+scripts/
+telemetry/
+tools/
+addons/

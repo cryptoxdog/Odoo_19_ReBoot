@@ -1,56 +1,17 @@
-name: Odoo CI (Replay Tests)
-
-on:
-  push:
-  pull_request:
-
-jobs:
-  replay-tests:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_USER: odoo
-          POSTGRES_PASSWORD: odoo
-          POSTGRES_DB: odoo
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U odoo -d odoo"
-          --health-interval 5s
-          --health-timeout 5s
-          --health-retries 20
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install deps
-        run: |
-          python -m pip install -U pip wheel
-          pip install -r requirements.txt || true
-
-      - name: Run Odoo tests (Docker)
-        env:
-          PGHOST: 127.0.0.1
-          PGPORT: 5432
-          PGUSER: odoo
-          PGPASSWORD: odoo
-        run: |
-          docker run --rm --network host \
-            -e HOST=127.0.0.1 \
-            -e PORT=5432 \
-            -e USER=odoo \
-            -e PASSWORD=odoo \
-            -v "${{ github.workspace }}/Plasticos:/mnt/extra-addons" \
-            odoo:19 \
-            -- -d odoo \
-              --stop-after-init \
-              -i plasticos_transaction \
-              --test-enable \
-              --log-level=test
+- name: Run Odoo tests (Docker)
+  run: |
+    docker run --rm \
+      --network host \
+      -v "${{ github.workspace }}:/mnt/extra-addons" \
+      odoo:19 \
+      --addons-path=/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons \
+      -d odoo \
+      --db_host=127.0.0.1 \
+      --db_port=5432 \
+      --db_user=odoo \
+      --db_password=odoo \
+      -i plasticos_documents,plasticos_commission,plasticos_logistics,plasticos_transaction \
+      --without-demo=all \
+      --test-enable \
+      --log-level=info \
+      --stop-after-init

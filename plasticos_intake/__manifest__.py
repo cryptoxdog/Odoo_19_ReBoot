@@ -6,8 +6,6 @@
     "depends": [
         "base",
         "mail",
-        "plasticos_material",
-        "plasticos_processing"
     ],
     "data": [
         "security/ir.model.access.csv",

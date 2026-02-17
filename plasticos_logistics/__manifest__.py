@@ -1,7 +1,7 @@
 {
     "name": "Plasticos Logistics Engine",
     "version": "1.0.0",
-    "depends": ["sale_management", "stock", "mail", "l9_trace"],
+    "depends": ["sale_management", "stock", "mail"],
     "data": [
         "security/ir.model.access.csv",
         "views/load_views.xml",

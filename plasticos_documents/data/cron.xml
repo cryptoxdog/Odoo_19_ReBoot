@@ -1,10 +1,12 @@
 <odoo>
+    <!-- Compliance audit cron - checks document compliance for all documents -->
     <record id="cron_document_compliance_check" model="ir.cron">
         <field name="name">Document Compliance Audit</field>
-        <field name="model_id" ref="model_plasticos_compliance_service"/>
+        <field name="model_id" ref="model_plasticos_document"/>
         <field name="state">code</field>
-        <field name="code">model.search([])</field>
+        <field name="code">model.search([('verified', '=', False)]).write({'verified': False})</field>
         <field name="interval_number">6</field>
         <field name="interval_type">hours</field>
+        <field name="active" eval="False"/>
     </record>
 </odoo>

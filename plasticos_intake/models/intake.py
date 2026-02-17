@@ -23,9 +23,9 @@ class PlasticosIntake(models.Model):
         "res.partner",
         domain="[('parent_id', '=', partner_id)]"
     )
-    processing_profile_id = fields.Many2one(
-        "plasticos.processing.profile"
-    )
+    # processing_profile_id = fields.Many2one(
+    #     "plasticos.processing.profile"
+    # )  # TODO: Enable when plasticos_processing module is available
 
     # =========================
     # Raw Broker Layer
@@ -167,15 +167,19 @@ class PlasticosIntake(models.Model):
             })
 
     def action_run_buyer_match(self):
-        adapter = self.env["l9.adapter.service"]
+        # TODO: Enable when l9_trace module is available
+        # adapter = self.env["l9.adapter.service"]
         for rec in self:
             if not rec.normalized:
                 raise UserError("Intake must be normalized before match.")
-            adapter.run_buyer_match(rec)
+            # adapter.run_buyer_match(rec)
+            raise UserError("L9 adapter not yet configured. Enable l9_trace module.")
 
     def action_replay_last_packet(self):
-        adapter = self.env["l9.adapter.service"]
+        # TODO: Enable when l9_trace module is available
+        # adapter = self.env["l9.adapter.service"]
         for rec in self:
             if not rec.last_packet_payload:
                 raise UserError("No stored packet to replay.")
-            adapter.emit_raw_packet(rec.last_packet_payload)
+            # adapter.emit_raw_packet(rec.last_packet_payload)
+            raise UserError("L9 adapter not yet configured. Enable l9_trace module.")

@@ -4,6 +4,15 @@
 !.gitignore
 !/addons
 
+# Under addons/PlasticOS: ignore infra, data, scripts, tests, and selected files
+addons/PlasticOS/.pre-commit-config.yaml
+addons/PlasticOS/filetree.txt
+addons/PlasticOS/infra/
+addons/PlasticOS/data/
+addons/PlasticOS/l9_integration/
+addons/PlasticOS/scripts/
+addons/PlasticOS/tests/
+
 # Environment and secrets
 .env
 .env.*

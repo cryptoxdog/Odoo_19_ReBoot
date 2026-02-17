@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_l9_adapter_service,l9.adapter.service,model_l9_adapter_service,base.group_system,1,1,1,1
+access_l9_canary_config_user,l9.canary.config.user,model_l9_canary_config,base.group_user,1,0,0,0
+access_l9_canary_config_manager,l9.canary.config.manager,model_l9_canary_config,base.group_system,1,1,1,1
+access_l9_drift_log_user,l9.drift.log.user,model_l9_drift_log,base.group_user,1,0,0,0
+access_l9_drift_log_manager,l9.drift.log.manager,model_l9_drift_log,base.group_system,1,1,1,1
+access_l9_health_metrics,l9.health.metrics,model_l9_health_metrics,base.group_user,1,0,0,0
+access_l9_kpi,l9.kpi,model_l9_kpi,base.group_user,1,0,0,0
+access_l9_regression_log_user,l9.regression.log.user,model_l9_regression_log,base.group_user,1,0,0,0
+access_l9_regression_log_manager,l9.regression.log.manager,model_l9_regression_log,base.group_system,1,1,1,1
+access_l9_shadow_log_user,l9.shadow.log.user,model_l9_shadow_log,base.group_user,1,0,0,0
+access_l9_shadow_log_manager,l9.shadow.log.manager,model_l9_shadow_log,base.group_system,1,1,1,1

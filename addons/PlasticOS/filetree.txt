@@ -1,0 +1,211 @@
+Plasticos/
+├── .github
+│   └── workflows
+│       └── odoo_ci.yml
+├── infra
+│   └── observability
+│       ├── alerts.yml
+│       ├── docker-compose.yml
+│       └── prometheus.yml
+├── l9_adapter
+│   ├── models
+│   │   ├── __init__.py
+│   │   └── adapter_service.py
+│   ├── security
+│   │   └── ir.model.access.csv
+│   ├── services
+│   │   ├── __init__.py
+│   │   ├── http_client.py
+│   │   ├── idempotency.py
+│   │   └── packet_builder.py
+│   ├── __init__.py
+│   └── __manifest__.py
+├── l9_canary
+│   ├── models
+│   │   ├── canary_gate.py
+│   │   └── init.py
+│   ├── init.py
+│   └── manifest.py
+├── l9_drift
+│   ├── data
+│   │   └── drift_cron.xml
+│   ├── models
+│   │   └── drift_detector.py
+│   └── __manifest__.py
+├── l9_health
+│   ├── data
+│   │   └── health_cron.xml
+│   ├── models
+│   │   └── health_metrics.py
+│   ├── views
+│   │   └── health_dashboard.xml
+│   └── __manifest__.py
+├── l9_kpi
+│   ├── models
+│   │   ├── init.py
+│   │   └── kpi_metrics.py
+│   ├── views
+│   │   └── kpi_dashboard.xml
+│   ├── init.py
+│   └── manifest.py
+├── l9_observability
+│   ├── services
+│   │   ├── init.py
+│   │   └── otel_bridge.py
+│   ├── init.py
+│   └── manifest.py
+├── l9_prometheus
+│   ├── controllers
+│   │   ├── init.py
+│   │   └── metrics.py
+│   ├── init.py
+│   └── manifest.py
+├── l9_regression
+│   ├── data
+│   │   └── regression_cron.xml
+│   ├── models
+│   │   ├── __init__.py
+│   │   └── regression_detector.py
+│   ├── __init__.py
+│   └── __manifest__.py
+├── l9_rollback
+│   ├── data
+│   │   └── rollback_cron.xml
+│   ├── models
+│   │   ├── init.py
+│   │   └── rollback_controller.py
+│   ├── init.py
+│   └── manifest.py
+├── l9_shadow
+│   ├── models
+│   │   ├── init.py
+│   │   └── shadow_log.py
+│   ├── init.py
+│   └── manifest.py
+├── l9_trace
+│   ├── data
+│   │   └── trace_cron.xml
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── trace_artifact.py
+│   │   ├── trace_event.py
+│   │   ├── trace_run.py
+│   │   └── trace_span.py
+│   ├── security
+│   │   └── ir.model.access.csv
+│   ├── services
+│   │   ├── correlation.py
+│   │   ├── drift_detector.py
+│   │   ├── enforcement.py
+│   │   ├── exporter.py
+│   │   ├── health_monitor.py
+│   │   ├── llm_wrapper.py
+│   │   ├── tool_wrapper.py
+│   │   └── trace_kernel.py
+│   ├── __init__.py
+│   └── __manifest__.py
+├── linda_dispatch
+│   ├── models
+│   │   └── dispatch.py
+│   └── manifest.py
+├── logistics
+│   ├── data
+│   │   └── cron.xml
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── init.py
+│   │   ├── linda_load.py
+│   │   ├── load.py
+│   │   ├── logistics_fields.py
+│   │   ├── rate_memory.py
+│   │   └── sale_order_inherit.py
+│   ├── security
+│   │   └── ir.model.access.csv
+│   ├── services
+│   │   ├── escalation_engine.py
+│   │   ├── init.py
+│   │   ├── rate_engine.py
+│   │   └── state_machine.py
+│   ├── views
+│   │   ├── linda_views.xml
+│   │   ├── load_views.xml
+│   │   └── sale_order_button.xml
+│   ├── __init__.py
+│   ├── __manifest__.py
+│   ├── init.py
+│   └── manifest.py
+├── plasticos_commission
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── commission_rule.py
+│   │   └── commission_service.py
+│   ├── security
+│   │   └── ir.model.access.csv
+│   ├── views
+│   │   └── commission_views.xml
+│   ├── __init__.py
+│   └── __manifest__.py
+├── plasticos_documents
+│   ├── data
+│   │   └── cron.xml
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── compliance_service.py
+│   │   ├── document.py
+│   │   ├── document_rule.py
+│   │   ├── document_tag.py
+│   │   └── init.py
+│   ├── security
+│   │   ├── ir.model.access.csv
+│   │   └── security.xml
+│   ├── views
+│   │   ├── document_rule_views.xml
+│   │   ├── document_tag_views.xml
+│   │   └── document_views.xml
+│   ├── __init__.py
+│   ├── __manifest__.py
+│   ├── init.py
+│   └── manifest.py
+├── plasticos_intake
+│   ├── models
+│   │   ├── __init__.py
+│   │   └── intake.py
+│   ├── security
+│   │   └── ir.model.access.csv
+│   ├── views
+│   │   └── intake_views.xml
+│   ├── __init__.py
+│   └── __manifest__.py
+├── plasticos_transaction
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── account_move_inherit.py
+│   │   ├── commission_rule.py
+│   │   ├── init.py
+│   │   ├── linda_inherit.py
+│   │   ├── purchase_inherit.py
+│   │   ├── sale_inherit.py
+│   │   └── transaction.py
+│   ├── security
+│   │   └── ir.model.access.csv
+│   ├── tests
+│   │   ├── __init__.py
+│   │   └── test_full_replay.py
+│   ├── views
+│   │   ├── commission_rule_views.xml
+│   │   └── transaction_views.xml
+│   ├── __init__.py
+│   ├── __manifest__.py
+│   ├── init.py
+│   └── manifest.py
+├── scripts
+│   ├── precommit_block_forbidden_calls.py
+│   └── replay_intake_matrix.py
+├── tests
+│   ├── __init__.py
+│   ├── base_test_case.py
+│   ├── canonical_intake_templates.py
+│   ├── test_buyer_matching_matrix.py
+│   └── test_full_replay.py
+├── .pre-commit-config.yaml
+└── filetree.txt

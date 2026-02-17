@@ -1,0 +1,9 @@
+<odoo>
+    <record id="group_documents_user" model="res.groups">
+        <field name="name">Documents User</field>
+    </record>
+
+    <record id="group_documents_manager" model="res.groups">
+        <field name="name">Documents Manager</field>
+    </record>
+</odoo>

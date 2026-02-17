@@ -1,6 +1,9 @@
 {
     "name": "Plasticos Transaction Spine",
     "version": "1.0.0",
+    "summary": "Core transaction lifecycle management",
+    "author": "PlasticOS",
+    "license": "LGPL-3",
     "depends": [
         "base",
         "mail",

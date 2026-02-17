@@ -3,6 +3,7 @@ from odoo import models
 
 class PlasticosAuditCron(models.Model):
     _name = "plasticos.audit.cron"
+    _description = "Plasticos Monthly Audit Cron"
 
     def run_monthly_audit(self):
         tx_model = self.env["plasticos.transaction"]

@@ -1,17 +1,15 @@
 # Ignore everything at repo root
 /*
-# Except addons (and .gitignore)
 !.gitignore
-!/addons
+!/.github
 
-# Under addons/PlasticOS: ignore infra, data, scripts, tests, and selected files
-addons/PlasticOS/.pre-commit-config.yaml
-addons/PlasticOS/filetree.txt
-addons/PlasticOS/infra/
-addons/PlasticOS/data/
-addons/PlasticOS/l9_integration/
-addons/PlasticOS/scripts/
-addons/PlasticOS/tests/
+# Ignore addons except these five modules
+addons/
+!/addons/plasticos_commission/
+!/addons/plasticos_documents/
+!/addons/plasticos_intake/
+!/addons/plasticos_logistics/
+!/addons/plasticos_transaction/
 
 # Environment and secrets
 .env
